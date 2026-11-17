@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>DIMECA STUDY</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg1:#ffd6ec;--bg2:#c9b6ff;--acc:#ff5fa2;--acc2:#7c5cff;--card:rgba(255,255,255,.9);--ink:#2b1b4d;--ok:#2fbf71;--bad:#ff5a6e;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--card:rgba(34,22,64,.92);--ink:#f6f0ff}}
+[data-t=neon]{--bg1:#1b0b3a;--bg2:#00b4d8;--acc:#ff2fd0;--acc2:#00a37a}
+[data-t=ocean]{--bg1:#b8f1ff;--bg2:#5d8bff;--acc:#1e88e5;--acc2:#00a896}
+[data-t=menta]{--bg1:#d7ffe0;--bg2:#fff3a8;--acc:#2fbf71;--acc2:#ff8a3d}
+html,body{margin:0;min-height:100%}
+body{font-family:"Baloo 2",system-ui,sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2)) fixed;color:var(--ink);font-size:17px}
+.bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.fl{position:fixed;font-size:34px;z-index:0;animation:fl 6s ease-in-out infinite;opacity:.85;pointer-events:none}
+@keyframes fl{50%{transform:translateY(-18px) rotate(8deg)}}
+#app{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:14px;display:flex;flex-direction:column;gap:14px}
+.card{background:var(--card);border-radius:26px;padding:18px;box-shadow:0 8px 0 rgba(0,0,0,.14);border:3px solid var(--acc)}
+.logo{font-size:40px;font-weight:800;margin:0;text-align:center;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent;transform:rotate(-2deg)}
+button{font:inherit;cursor:pointer;border:3px solid #2b1b4d;border-radius:18px;padding:8px 14px;background:#fff;color:#2b1b4d;font-weight:700;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+button:active{transform:translateY(3px);box-shadow:none}
+.big{background:var(--acc);color:#fff;font-size:20px;width:100%;margin-top:8px}
+.on{background:var(--acc2);color:#fff}
+.chip.lk{opacity:.65;border-style:dashed}
+input{font:inherit;width:100%;padding:10px 14px;border-radius:16px;border:3px solid var(--acc2);margin:5px 0;background:#fff;color:#2b1b4d}
+.ck{display:flex;gap:8px;align-items:center}.ck input{width:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.sub{padding:16px 8px;font-size:20px;text-align:center;line-height:1.2}.sub b{display:block;font-size:46px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}.opts button{font-size:21px;padding:16px}
+.ok{background:var(--ok)!important;color:#fff!important}.no{background:var(--bad)!important;color:#fff!important}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.sw{width:32px;height:32px;padding:0;border-radius:50%}
+i.d{display:inline-block;width:18px;height:18px;border-radius:50%;border:2px solid #333;margin-right:6px;vertical-align:-3px}
+.c{text-align:center}.q{font-size:24px;text-align:center;margin:10px 0 16px}
+.big2{font-size:42px;line-height:1.3;margin:8px 0;word-break:break-word}.shp{width:110px;height:110px}
+.bar{height:10px;background:rgba(0,0,0,.15);border-radius:9px;overflow:hidden;margin:8px 0}.bar div{height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:.3s}
+.er{color:var(--bad);margin:6px 0;min-height:1.2em}
+#toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:#2b1b4d;color:#fff;padding:10px 18px;border-radius:20px;opacity:0;transition:.3s;z-index:9;pointer-events:none}
+</style></head><body>
+<svg class="bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".55"><path d="M30 80q30-40 60 0t60 0t60 0"/><path d="M620 520q30-40 60 0t60 0"/><path d="M700 60l10 24 26 2-20 16 6 26-22-14-22 14 6-26-20-16 26-2z"/><path d="M60 480l8 18 20 2-15 12 5 20-18-10-18 10 5-20-15-12 20-2z"/><circle cx="400" cy="560" r="22"/><path d="M300 40c40 30 80-30 120 0M90 300c30-30 50 30 80 0"/><text x="560" y="330" font-size="64" font-weight="800" fill="#fff" stroke="none" opacity=".35" transform="rotate(-12 560 330)">DIMECA</text><text x="30" y="260" font-size="48" font-weight="800" fill="#fff" stroke="none" opacity=".3" transform="rotate(8 30 260)">¡wow!</text></svg>
+<span class="fl" style="left:4%;top:20%">🐱</span><span class="fl" style="left:88%;top:12%;animation-delay:1s">🦄</span><span class="fl" style="left:90%;top:70%;animation-delay:2s">🌈</span><span class="fl" style="left:6%;top:75%;animation-delay:3s">🦊</span><span class="fl" style="left:48%;top:92%;animation-delay:1.5s">🐼</span>
+<div id="app"></div><div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),app=$('#app');
+let mem={};
+const ld=(k,d)=>{try{const v=localStorage.getItem(k);if(v)return JSON.parse(v)}catch(e){}return k in mem?mem[k]:d};
+const sv=(k,v)=>{mem[k]=v;try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const hsh=s=>{let x=5381;for(const c of s)x=((x<<5)+x+c.charCodeAt(0))|0;return x.toString(36)};
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1)),pk=a=>a[R(0,a.length-1)],sh=a=>[...a].sort(()=>Math.random()-.5),pn=(a,n)=>sh(a).slice(0,n);
+/* sonidos */
+let ac;const tone=(f,t=.12,ty='sine',w=0)=>{try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain(),n=ac.currentTime+w;o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(.15,n);g.gain.exponentialRampToValueAtTime(.001,n+t);o.connect(g);g.connect(ac.destination);o.start(n);o.stop(n+t)}catch(e){}};
+const snd={ok:()=>{tone(660,.12,'triangle');tone(880,.2,'triangle',.1)},no:()=>tone(200,.25,'sawtooth'),cl:()=>tone(520,.06,'square'),win:()=>[523,659,784,1047].forEach((f,i)=>tone(f,.2,'triangle',i*.12))};
+const say=(t,l)=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=l;speechSynthesis.speak(u)}catch(e){}};
+function toast(t){const e=$('#toast');e.textContent=t;e.style.opacity=1;clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.opacity=0,2400)}
+
+/* personaje */
+const IT={sp:['👦 Niño','👧 Niña','👽 Otro','🧝 Místico','🐱 Animal'],hs:['Corto','Largo','Coletas','Moño','Rizos','Anime','Cresta','Calvo'],ts:['Camiseta','Hoodie','Graffiti','Vestido','Kimono','Overol','Capa mística','Rayas'],bs:['Shorts','Pantalón','Falda','Jeans garabato'],ht:['Sin gorro','Gorra','Gorro lana','Corona','Orejas gato','Mago','Lazo','Flores'],ax:['Ninguno','Lentes','Sol','Bufanda','Audífonos','Alas','Collar','Estrellitas']};
+const CO={sp:[0,0,0,0,0],hs:[0,0,0,10,10,15,20,0],ts:[0,0,10,0,20,15,30,10],bs:[0,0,0,15],ht:[0,0,10,30,15,40,10,20],ax:[0,0,10,10,15,40,10,10]};
+const CF={sp:'sk',hs:'hc',ts:'tc',bs:'bc',ht:'htc',ax:'axc'};
+const TB=[['sp','🧑 Personaje'],['hs','💇 Pelo'],['ts','👕 Arriba'],['bs','👖 Abajo'],['ht','🎩 Gorros'],['ax','🕶️ Extras']];
+const PAL=['#ff5fa2','#ff4d4d','#ff9f1c','#ffd23f','#7ae582','#2fbf71','#00c2d1','#4a6cf7','#7c5cff','#c77dff','#ffffff','#2b1b4d','#8d5a3b','#f9c6d9','#a0e7ff','#b5ff3c'];
+const SK=['#ffe0c7','#ffd0a8','#e8b38a','#c68a5c','#8d5a3b','#5e3a24','#a8e6a1','#9fd8ff','#d8b4ff','#ffb3c7','#fff3a0','#b0b8c8'];
+const DA={sp:0,sk:'#ffd0a8',hs:0,hc:'#5b3a29',ts:0,tc:'#ff5fa2',bs:1,bc:'#4a6cf7',ht:0,htc:'#ffd23f',ax:0,axc:'#7c5cff'};
+function av(a,s=220){const{sp,sk,hs,hc,ts,tc,bs,bc,ht,htc,ax,axc}=a,d='#2b1b4d';let b='';
+if(ax==5)b+=`<g fill="${axc}" opacity=".85"><path d="M62 140Q8 90 14 170Q40 160 62 175Z"/><path d="M138 140Q192 90 186 170Q160 160 138 175Z"/></g>`;
+if(sp==4)b+=`<path d="M138 225Q192 222 182 168" stroke="${sk}" stroke-width="12" fill="none" stroke-linecap="round"/>`;
+if(hs==1)b+=`<rect x="54" y="48" width="92" height="125" rx="40" fill="${hc}"/>`;
+if(ts==1)b+=`<circle cx="100" cy="128" r="30" fill="${tc}"/>`;
+if(ts==6)b+=`<path d="M58 130L34 232H166L142 130Z" fill="${tc}" opacity=".6"/>`;
+b+=`<rect x="72" y="195" width="22" height="58" rx="9" fill="${sk}"/><rect x="106" y="195" width="22" height="58" rx="9" fill="${sk}"/><ellipse cx="82" cy="255" rx="17" ry="8" fill="${d}"/><ellipse cx="118" cy="255" rx="17" ry="8" fill="${d}"/>`;
+if(bs==0)b+=`<rect x="68" y="190" width="32" height="32" rx="6" fill="${bc}"/><rect x="100" y="190" width="32" height="32" rx="6" fill="${bc}"/>`;
+if(bs==1||bs==3||ts==5)b+=`<rect x="68" y="190" width="32" height="62" rx="8" fill="${bc}"/><rect x="100" y="190" width="32" height="62" rx="8" fill="${bc}"/>`;
+if(bs==2)b+=`<path d="M64 190H136L150 238H50Z" fill="${bc}"/>`;
+if(bs==3)b+=`<path d="M74 210l8 10 6-12M108 224q8-10 14 0M76 236h14" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>`;
+b+=ts==3?`<path d="M64 128H136L152 238H48Z" fill="${tc}"/>`:`<rect x="62" y="128" width="76" height="68" rx="16" fill="${tc}"/>`;
+b+=`<rect x="44" y="132" width="20" height="58" rx="10" fill="${sk}"/><rect x="136" y="132" width="20" height="58" rx="10" fill="${sk}"/>`;
+if(ts!=3&&ts!=5){const h=ts==1?54:30;b+=`<rect x="44" y="132" width="20" height="${h}" rx="10" fill="${tc}"/><rect x="136" y="132" width="20" height="${h}" rx="10" fill="${tc}"/>`}
+if(ts==1)b+=`<rect x="78" y="166" width="44" height="20" rx="7" fill="#0003"/><path d="M92 130v22M108 130v22" stroke="#fff" stroke-width="3"/>`;
+if(ts==2)b+=`<path d="M70 146q10-14 20 0t20 0t20 0" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M78 176l8-14 8 14-14-9h12z" fill="#ffe14d"/><text x="118" y="184" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">DM</text>`;
+if(ts==4)b+=`<path d="M100 128L82 196M100 128L118 196" stroke="#fff" stroke-width="5"/><rect x="62" y="170" width="76" height="14" fill="#ffd23f"/>`;
+if(ts==5)b+=`<rect x="76" y="158" width="48" height="40" rx="6" fill="${bc}"/><rect x="76" y="128" width="8" height="34" fill="${bc}"/><rect x="116" y="128" width="8" height="34" fill="${bc}"/>`;
+if(ts==6)b+=`<path d="M62 130H138" stroke="#ffd23f" stroke-width="6"/><path d="M100 148l5 10 11 1-8 7 2 11-10-6-10 6 2-11-8-7 11-1z" fill="#ffd23f"/>`;
+if(ts==7)b+=`<g fill="#ffffff88"><rect x="62" y="144" width="76" height="8"/><rect x="62" y="164" width="76" height="8"/><rect x="62" y="184" width="76" height="8"/></g>`;
+if(ax==3)b+=`<rect x="68" y="120" width="64" height="14" rx="7" fill="${axc}"/><rect x="112" y="124" width="14" height="38" rx="6" fill="${axc}"/>`;
+if(ax==6)b+=`<path d="M78 128Q100 158 122 128" stroke="${axc}" stroke-width="3" fill="none"/><circle cx="100" cy="150" r="6" fill="${axc}"/>`;
+if(sp==4)b+=`<path d="M62 62L56 22L90 46Z M138 62L144 22L110 46Z" fill="${sk}"/><path d="M64 54L62 34L78 46Z M136 54L138 34L122 46Z" fill="#ff9ec4"/>`;
+if(sp==3)b+=`<path d="M60 88L26 68L58 110Z M140 88L174 68L142 110Z" fill="${sk}"/><text x="138" y="52" font-size="16">✨</text>`;
+if(sp==2)b+=`<path d="M100 46V20" stroke="${d}" stroke-width="3"/><circle cx="100" cy="18" r="7" fill="#ff5fa2"/>`;
+b+=`<circle cx="100" cy="88" r="42" fill="${sk}"/>`;
+for(const x of[82,118])b+=`<ellipse cx="${x}" cy="92" rx="9" ry="11" fill="#fff"/><circle cx="${x+1}" cy="94" r="7" fill="#3a2a6a"/><circle cx="${x+3}" cy="90" r="2.5" fill="#fff"/>`;
+b+=`<ellipse cx="68" cy="108" rx="7" ry="4" fill="#ff7aa8" opacity=".5"/><ellipse cx="132" cy="108" rx="7" ry="4" fill="#ff7aa8" opacity=".5"/><path d="M92 111Q100 119 108 111" stroke="${d}" stroke-width="2.5" fill="none" stroke-linecap="round"/>`;
+if(sp==1)b+=`<path d="M70 84l-6-4M130 84l6-4" stroke="${d}" stroke-width="3" stroke-linecap="round"/>`;
+if(sp==4)b+=`<path d="M96 102h8l-4 5z" fill="#ff8aa8"/><path d="M64 104H38M64 111L40 118M136 104h26M136 111l24 7" stroke="${d}" stroke-width="1.6" opacity=".6"/>`;
+const cap=`<path d="M56 90Q54 36 100 36Q146 36 144 90Q134 60 100 62Q66 60 56 90Z" fill="${hc}"/>`;
+if(hs==0||hs==1)b+=cap;
+if(hs==2)b+=cap+`<circle cx="50" cy="98" r="15" fill="${hc}"/><circle cx="150" cy="98" r="15" fill="${hc}"/>`;
+if(hs==3)b+=cap+`<circle cx="100" cy="30" r="17" fill="${hc}"/>`;
+if(hs==4)b+=cap+[[62,62],[80,46],[100,40],[120,46],[138,62],[56,84],[144,84]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="17" fill="${hc}"/>`).join('');
+if(hs==5)b+=cap+`<path d="M62 60L48 28L84 46L98 16L112 46L142 26L138 62Z M70 62Q80 100 66 114Q56 92 62 66Z M130 62Q120 100 134 114Q144 92 138 66Z" fill="${hc}"/>`;
+if(hs==6)b+=`<path d="M80 58Q94 -4 120 58Q100 46 80 58Z" fill="${hc}"/>`;
+if(ht==1)b+=`<path d="M56 70Q60 30 100 30Q140 30 144 70Z" fill="${htc}"/><rect x="96" y="62" width="62" height="10" rx="5" fill="${htc}" stroke="#0003"/>`;
+if(ht==2)b+=`<path d="M56 66Q58 26 100 26Q142 26 144 66Z" fill="${htc}"/><rect x="54" y="60" width="92" height="14" rx="7" fill="#ffffff88"/><circle cx="100" cy="20" r="10" fill="${htc}"/>`;
+if(ht==3)b+=`<path d="M64 56L62 26L82 42L100 18L118 42L138 26L136 56Z" fill="${htc}" stroke="#c99a00" stroke-width="2"/>`;
+if(ht==4)b+=`<path d="M62 58L56 20L90 44Z M138 58L144 20L110 44Z" fill="${htc}"/>`;
+if(ht==5)b+=`<ellipse cx="100" cy="62" rx="58" ry="10" fill="${htc}"/><path d="M68 62L100 -14L132 62Z" fill="${htc}"/><circle cx="108" cy="30" r="4" fill="#ffe14d"/>`;
+if(ht==6)b+=`<path d="M132 42L106 28V56Z M132 42L158 28V56Z" fill="${htc}"/><circle cx="132" cy="42" r="5" fill="#fff"/>`;
+if(ht==7)b+=[66,84,100,116,134].map((x,i)=>`<circle cx="${x}" cy="${[62,50,44,50,62][i]}" r="9" fill="${i%2?htc:'#fff'}" stroke="#0002"/>`).join('');
+if(ax==1)b+=`<g fill="none" stroke="${axc}" stroke-width="3"><circle cx="82" cy="93" r="14"/><circle cx="118" cy="93" r="14"/><path d="M96 93h8"/></g>`;
+if(ax==2)b+=`<rect x="66" y="82" width="30" height="20" rx="8" fill="${d}"/><rect x="104" y="82" width="30" height="20" rx="8" fill="${d}"/><path d="M96 90h8" stroke="${d}" stroke-width="3"/>`;
+if(ax==4)b+=`<path d="M58 88Q58 36 100 36Q142 36 142 88" stroke="${axc}" stroke-width="6" fill="none"/><rect x="50" y="80" width="14" height="28" rx="6" fill="${axc}"/><rect x="136" y="80" width="14" height="28" rx="6" fill="${axc}"/>`;
+if(ax==7)b+=`<text x="54" y="116" font-size="13">⭐</text><text x="132" y="116" font-size="13">💗</text>`;
+return`<svg viewBox="0 -20 200 290" width="${s}" height="${s*1.45}">${b}</svg>`}
+
+/* generadores de preguntas */
+const mk=(q,a,w,x={})=>{const o=sh([a,...w]);return{q,o,a:o.indexOf(a),...x}};
+const nm=a=>{const s=new Set();let g=0;while(s.size<3&&g++<99){const v=a+R(-6,6);if(v!==a&&v>=0)s.add(String(v))}return[...s]};
+const mn=(q,a)=>mk(q,String(a),nm(a));
+const SH={círculo:'<circle cx="50" cy="50" r="40"/>',cuadrado:'<rect x="15" y="15" width="70" height="70"/>',rectángulo:'<rect x="6" y="28" width="88" height="44"/>',triángulo:'<polygon points="50,10 92,88 8,88"/>',rombo:'<polygon points="50,6 92,50 50,94 8,50"/>',estrella:'<polygon points="50,6 61,38 95,38 67,58 78,92 50,71 22,92 33,58 5,38 39,38"/>',pentágono:'<polygon points="50,8 92,38 76,90 24,90 8,38"/>',hexágono:'<polygon points="28,10 72,10 94,50 72,90 28,90 6,50"/>',corazón:'<path d="M50 90C10 60 8 30 28 18C40 10 50 22 50 28C50 22 60 10 72 18C92 30 90 60 50 90Z"/>'};
+const sv2=(n,c)=>`<svg class="shp" viewBox="0 0 100 100" fill="${c}" stroke="#2b1b4d" stroke-width="4">${SH[n]}</svg>`;
+const NS=Object.keys(SH),LD={triángulo:3,cuadrado:4,rectángulo:4,rombo:4,pentágono:5,hexágono:6,círculo:0};
+const EM=['🔺','🟦','⭐','🍎','🐱','🌸','💜'];
+const ops=L=>{let a,b;
+if(L==0){a=R(1,12);b=R(1,12);if(pk([0,1]))return mn(`${a} + ${b} = ?`,a+b);if(a<b)[a,b]=[b,a];return mn(`${a} − ${b} = ?`,a-b)}
+if(L==1){if(pk([0,1])){a=R(2,9);b=R(2,9);return mn(`${a} × ${b} = ?`,a*b)}a=R(30,99);b=R(10,a-1);return mn(`${a} − ${b} = ?`,a-b)}
+const t=R(0,3);a=R(2,9);b=R(2,9);const c=R(2,6);
+if(t==0)return mn(`(${a} + ${b}) × ${c} = ?`,(a+b)*c);
+if(t==1)return mn(`x + ${a} = ${a+b+c}.  ¿x = ?`,b+c);
+if(t==2){const n=pk([20,40,60,80,100]);return mn(`El 50% de ${n} es…`,n/2)}
+return mn(`${a*c} ÷ ${c} = ?`,a)};
+const cnt=L=>{const s=pk(EM),n=R(...[[2,8],[5,14],[10,24]][L]),o=pn(EM.filter(x=>x!==s),3),it=Array(n).fill(s);for(let i=R(3,8+L*4);i>0;i--)it.push(pk(o));return mn(`¿Cuántos ${s} hay?<div class="big2">${sh(it).join('')}</div>`,n)};
+const sto=L=>{const[e,nme]=pk([['🍎','manzanas'],['🍪','galletas'],['🌸','flores'],['⭐','estrellas'],['🐟','peces']]),a=R(3,9),b=R(2,8);
+if(L==0)return pk([0,1])?mn(`Sofi tiene ${a} ${nme}. Le regalan ${b} más. ¿Cuántas tiene?<div class="big2">${e.repeat(a)} + ${e.repeat(b)}</div>`,a+b):mn(`Leo tenía ${a+b} ${nme} y regaló ${b}. ¿Cuántas le quedan?<div class="big2">${e.repeat(a+b)}</div>`,a);
+if(L==1)return pk([0,1])?mn(`Hay ${a} cajas con ${b} ${nme} cada una. ¿Cuántas hay en total?`,a*b):mn(`Un cuadrado mide ${a} cm por lado. ¿Cuál es su perímetro (cm)?<div>${sv2('cuadrado','#ffd23f')}</div>`,a*4);
+return pk([0,1])?mn(`Un rectángulo mide ${a} cm de largo y ${b} cm de ancho. ¿Cuál es su área (cm²)?<div>${sv2('rectángulo','#7ae582')}</div>`,a*b):mn(`Un rectángulo mide ${a} cm por ${b} cm. ¿Cuál es su perímetro (cm)?<div>${sv2('rectángulo','#a0e7ff')}</div>`,2*(a+b))};
+const pat=()=>{const[a,b,c]=pn(EM,3),t=pk([[[a,b,a,b,a],b],[[a,a,b,a,a],b],[[a,b,c,a,b],c]]);return mk(`¿Qué sigue?<div class="big2">${t[0].join('')}❓</div>`,t[1],pn(EM.filter(x=>x!==t[1]),3))};
+const fig=()=>{const n=pk(NS);return mk(`¿Qué figura es?<div>${sv2(n,pk(PAL))}</div>`,n,pn(NS.filter(x=>x!==n),3))};
+const lad=()=>{const n=pk(Object.keys(LD));return mn(`¿Cuántos lados tiene el ${n}?<div>${sv2(n,pk(PAL))}</div>`,LD[n])};
+const WS=['gato🐱','perro🐶','mariposa🦋','elefante🐘','sol☀️','luna🌙','flor🌸','pájaro🐦','pez🐟','árbol🌳','libro📖','estrella⭐'];
+const fal=()=>{const w=pk(WS),wd=w.match(/^[a-záéíóúñ]+/)[0],em=w.slice(wd.length),i=R(0,wd.length-1),l=wd[i];return mk(`Completa la palabra<div class="big2">${em}<br>${wd.slice(0,i)}_${wd.slice(i+1)}</div>`,l,pn('abcdefghilmnoprstuz'.split('').filter(x=>x!==l),3))};
+const OR=[['hormiga','ormiga'],['vaca','baca'],['jirafa','girafa'],['zapato','sapato'],['llave','yave'],['hielo','yelo'],['queso','keso'],['hueso','ueso'],['ciudad','siudad'],['guitarra','guitara'],['bonito','vonito'],['ojo','ogo']];
+const ort=()=>{const p=pk(OR);return mk('¿Cuál está bien escrita?',p[0],[p[1]])};
+const AN=[['grande','pequeño'],['día','noche'],['frío','calor'],['alto','bajo'],['feliz','triste'],['rápido','lento'],['abrir','cerrar'],['subir','bajar'],['limpio','sucio'],['dulce','salado']];
+const ant=()=>{const p=pk(AN);return mk(`Lo contrario de <b>${p[0]}</b> es…`,p[1],pn(AN.filter(x=>x!==p).map(x=>x[1]),3))};
+const COL=[['🍎','rojo','#e53935'],['🍌','amarillo','#fdd835'],['🌿','verde','#43a047'],['🫐','azul','#1e88e5'],['🍊','naranja','#fb8c00'],['🍇','morado','#8e24aa'],['🌸','rosa','#f48fb1'],['🐻','café','#795548'],['🐈‍⬛','negro','#222'],['☁️','blanco','#fff']];
+const cl=c=>`<i class="d" style="background:${c[2]}"></i>${c[1]}`;
+const col1=()=>{const c=pk(COL);return mk(`¿De qué color es<div class="big2">${c[0]}</div>?`,cl(c),pn(COL.filter(x=>x!==c),3).map(cl))};
+const MIX=[['azul','amarillo','verde'],['rojo','amarillo','naranja'],['rojo','azul','morado'],['rojo','blanco','rosa'],['negro','blanco','gris']];
+const mix=()=>{const m=pk(MIX);return mk(`🎨 ${m[0]} + ${m[1]} = ?`,m[2],pn(['verde','naranja','morado','rosa','gris','café','rojo'].filter(x=>x!==m[2]),3))};
+const ES=['gato','perro','casa','agua','sol','luna','libro','rojo','azul','hola','gracias','amigo'];
+const V={en:['cat','dog','house','water','sun','moon','book','red','blue','hello','thank you','friend'],fr:['chat','chien','maison','eau','soleil','lune','livre','rouge','bleu','bonjour','merci','ami'],ja:['ねこ','いぬ','いえ','みず','たいよう','つき','ほん','あか','あお','こんにちは','ありがとう','ともだち'],ru:['кошка','собака','дом','вода','солнце','луна','книга','красный','синий','привет','спасибо','друг']};
+const RM={ja:['neko','inu','ie','mizu','taiyō','tsuki','hon','aka','ao','konnichiwa','arigatō','tomodachi'],ru:['koshka','sobaka','dom','voda','solntse','luna','kniga','krasnyj','sinij','privet','spasibo','drug']};
+const LN={en:['Inglés','en-US','🇬🇧'],fr:['Francés','fr-FR','🇫🇷'],ja:['Japonés','ja-JP','🇯🇵'],ru:['Ruso','ru-RU','🇷🇺']};
+const vc=l=>()=>{const i=R(0,11),d=j=>V[l][j]+(RM[l]?` (${RM[l][j]})`:''),o=pn([...Array(12).keys()].filter(x=>x!==i),3),s=[V[l][i],LN[l][1]];
+return pk([0,1])?mk(`¿Cómo se dice <b>«${ES[i]}»</b> en ${LN[l][0]}?`,d(i),o.map(d),{say:s,after:1}):mk(`<div class="big2">${d(i)}</div>¿Qué significa?`,ES[i],o.map(j=>ES[j]),{say:s})};
+const TR=[['Tengo agujas pero no pincho 🕐. ¿Qué soy?','Un reloj','Un cactus','Un erizo','Un pino'],['¿Cuál es el animal más grande del mundo? 🐋','La ballena azul','El elefante','La jirafa','El tiburón'],['Blanca por dentro, verde por fuera. Si quieres que te lo diga, espera 🍐','La pera','La manzana','El kiwi','El limón'],['¿Cuántos colores tiene el arcoíris 🌈?','7','5','9','6'],['¿Qué planeta está más cerca del Sol? ☀️','Mercurio','Venus','Marte','Júpiter'],['¿Cuántas patas tiene una araña 🕷️?','8','6','10','4'],['Vuelo sin alas y lloro sin ojos. ¿Qué soy?','La nube','El viento','El pájaro','La luna'],['¿En qué país está la Torre Eiffel? 🗼','Francia','Italia','Japón','Rusia'],['¿Cómo se dice «gracias» en japonés? 🇯🇵','Arigatō','Merci','Spasibo','Thanks'],['¿Qué dos colores mezclas para hacer verde? 🎨','Azul y amarillo','Rojo y azul','Rojo y blanco','Negro y blanco']];
+const tri=()=>{const t=pk(TR);return mk(t[0],t[1],t.slice(2))};
+const mixg=()=>pk([tri,tri,tri,()=>ops(R(0,1)),fal,col1,fig,ant,vc('en'),vc('fr')])();
+const SUB={
+mate:['Matemáticas','🔢','#ffd166',[['➕ Operaciones',ops],['🔺 Cuenta formas',cnt],['🧩 Problemas con formas',sto],['🔁 Patrones',pat]],1],
+esp:['Español','📚','#ff9bd2',[['✏️ Completa la palabra',fal],['🔤 Ortografía',ort],['↔️ Antónimos',ant]]],
+col:['Colores','🎨','#9be7ff',[['🍎 ¿De qué color es?',col1],['🖌️ Mezclas',mix]]],
+for:['Formas','🔷','#b9f6ca',[['🔍 Identifica la figura',fig],['📐 Cuenta los lados',lad],['🔁 Patrones',pat]]],
+idi:['Idiomas','🌍','#d1b3ff',Object.keys(LN).map(l=>[`${LN[l][2]} ${LN[l][0]}`,vc(l)])],
+tri:['Trivia en equipo','🤝','#ffab91']};
+const TH={sakura:'🌸 Sakura',neon:'🌃 Neón',ocean:'🌊 Océano',menta:'🍃 Menta'};
+
+/* cuenta y pantallas */
+let U=null,A={},tab='sp',lv=0,Q=null;
+const users=()=>ld('dm_u',{}),save=()=>{const us=users();us[U.e]=U;sv('dm_u',us)};
+function auth(m='in'){app.innerHTML=`<div class="card" style="max-width:430px;margin:20px auto;width:100%"><h1 class="logo">DIMECA STUDY</h1><p class="c">Aprende jugando ✨ mates, español, colores, formas e idiomas</p><div class="row" style="justify-content:center"><button class="${m=='in'?'on':''}" onclick="auth('in')">Entrar</button><button class="${m=='up'?'on':''}" onclick="auth('up')">Crear cuenta</button></div><input id="e" type="email" placeholder="Correo electrónico" autocomplete="email">${m=='up'?'<input id="n" placeholder="Nombre de usuario" maxlength="14">':''}<input id="p" type="password" placeholder="Contraseña" autocomplete="${m=='up'?'new':'current'}-password"><label class="ck"><input id="r" type="checkbox" checked> Mantener sesión iniciada</label><button class="big" onclick="go('${m}')">${m=='in'?'¡Entrar! 🚀':'¡Crear mi cuenta! 🎉'}</button><p id="er" class="er"></p></div>`}
+function go(m){const e=$('#e').value.trim().toLowerCase(),p=$('#p').value,us=users(),er=t=>$('#er').textContent=t;
+if(!/^\S+@\S+\.\S+$/.test(e))return er('Escribe un correo válido 📧');if(p.length<4)return er('La contraseña necesita 4 o más caracteres 🔑');
+if(m=='up'){const n=$('#n').value.trim();if(n.length<2)return er('Elige un nombre de usuario ✏️');if(us[e])return er('Ese correo ya tiene cuenta. ¡Entra!');us[e]={e,u:n,p:hsh(p),c:20,own:[],av:{...DA},th:'sakura',pt:0};sv('dm_u',us);begin(e,$('#r').checked,1)}
+else{if(!us[e]||us[e].p!=hsh(p))return er('Correo o contraseña incorrectos 🙈');begin(e,$('#r').checked)}}
+function begin(e,r,nw){U=users()[e];if(!U)return auth();if(r)sv('dm_s',e);else try{sessionStorage.setItem('dm_s',e)}catch(x){}document.documentElement.dataset.t=U.th;nw?dress():home()}
+function out(){mem.dm_s=null;try{localStorage.removeItem('dm_s');sessionStorage.removeItem('dm_s')}catch(e){}U=null;auth()}
+function home(){app.innerHTML=`<div class="card"><div class="row"><div>${av(U.av,80)}</div><div style="flex:1;min-width:140px"><h2 style="margin:0">¡Hola, ${esc(U.u)}!</h2><b>🪙 ${U.c} monedas · ⭐ ${U.pt||0}</b></div><button onclick="dress()">👗 Vestuario</button><button onclick="out()">🚪 Salir</button></div><div class="row" style="margin-top:10px"><span>Diseño:</span>${Object.entries(TH).map(([k,v])=>`<button class="${U.th==k?'on':''}" onclick="theme('${k}')">${v}</button>`).join('')}</div></div><div class="grid">${Object.entries(SUB).map(([k,s])=>`<button class="sub" style="background:${s[2]}" onclick="sub('${k}')"><b>${s[1]}</b>${s[0]}</button>`).join('')}</div>`}
+function theme(k){U.th=k;save();document.documentElement.dataset.t=k;snd.cl();home()}
+function sub(k){const s=SUB[k];let h=`<div class="card"><div class="row"><button onclick="home()">⬅️</button><h2 style="margin:0">${s[1]} ${s[0]}</h2></div>`;
+if(s[4])h+=`<p>Elige tu edad:</p><div class="row">${['6–8 años','9–10 años','11–12 años'].map((t,i)=>`<button class="${lv==i?'on':''}" onclick="lv=${i};sub('${k}')">${t}</button>`).join('')}</div>`;
+if(k=='tri')h+=`<p>Juega con un amigo en el mismo dispositivo: se turnan y suman puntos juntos 🤝</p><input id="p1" placeholder="Jugador 1" value="${esc(U.u)}"><input id="p2" placeholder="Jugador 2 (tu amigo)"><button class="big" onclick="coop()">¡Jugar en equipo! 🎉</button>`;
+else h+=`<p>Elige un minijuego:</p><div class="grid">${s[3].map((g,i)=>`<button class="sub" onclick="play('${k}',${i})">${g[0]}</button>`).join('')}</div>`;
+app.innerHTML=h+'</div>'}
+const play=(k,i)=>begin2({g:SUB[k][3][i][1]});
+const coop=()=>begin2({g:mixg,pl:[$('#p1').value.trim()||'Jugador 1',$('#p2').value.trim()||'Jugador 2']});
+function begin2(o){Q={...o,n:8,i:0,ok:0,t:0};ask()}
+function ask(){const q=Q.cur=Q.g(lv);Q.lock=0;
+app.innerHTML=`<div class="card"><div class="row" style="justify-content:space-between"><button onclick="if(confirm('¿Salir del juego?'))home()">✖</button><b>${Q.i+1}/${Q.n}</b><b>⭐ ${Q.ok}</b></div>${Q.pl?`<p class="c">🤝 Turno de <b>${esc(Q.pl[Q.t])}</b></p>`:''}<div class="bar"><div style="width:${Q.i/Q.n*100}%"></div></div><div class="q">${q.q}${q.say?` <button onclick="say('${q.say[0]}','${q.say[1]}')">🔊</button>`:''}</div><div class="opts">${q.o.map((o,i)=>`<button id="b${i}" onclick="ans(${i})">${o}</button>`).join('')}</div></div>`;
+if(q.say&&!q.after)say(q.say[0],q.say[1])}
+function ans(i){if(Q.lock)return;Q.lock=1;const q=Q.cur,ok=i==q.a;$('#b'+i).classList.add(ok?'ok':'no');$('#b'+q.a).classList.add('ok');ok?(Q.ok++,snd.ok()):snd.no();if(q.say&&q.after)say(q.say[0],q.say[1]);setTimeout(()=>{Q.i++;Q.t=1-Q.t;Q.i>=Q.n?end():ask()},1200)}
+function end(){const c=Q.ok*(Q.pl?4:3)+(Q.ok==Q.n?10:0),st=Math.round(Q.ok/Q.n*3);U.c+=c;U.pt=(U.pt||0)+Q.ok;save();snd.win();
+app.innerHTML=`<div class="card c"><h1>${['😢','🙂','😃','🏆'][st]} ¡Terminaste!</h1><p class="big2">${'⭐'.repeat(st)||'💪'}</p><p>Aciertos: <b>${Q.ok}/${Q.n}</b></p><p>Ganaste <b>🪙 ${c}</b> monedas (tienes ${U.c})</p><div class="row" style="justify-content:center"><button class="on" onclick="begin2(Q)">🔁 Otra vez</button><button onclick="dress()">👗 Gastar monedas</button><button onclick="home()">🏠 Menú</button></div></div>`}
+
+/* vestuario */
+function dress(){A={...U.av};tab='sp';edit()}
+function edit(){const cf=CF[tab],pal=tab=='sp'?SK:PAL;
+app.innerHTML=`<div class="card"><div class="row" style="justify-content:space-between"><button onclick="home()">⬅️ Menú</button><b>🪙 ${U.c}</b></div><div class="row" style="align-items:flex-start;justify-content:center"><div class="c">${av(A,230)}<div><button onclick="rnd()">🎲 Sorpresa</button></div></div><div style="flex:1;min-width:260px"><div class="row">${TB.map(t=>`<button class="${tab==t[0]?'on':''}" onclick="tab='${t[0]}';edit()">${t[1]}</button>`).join('')}</div><p>Estilo (🔒 = se compra con monedas):</p><div class="row">${IT[tab].map((n,i)=>{const lk=CO[tab][i]&&!U.own.includes(tab+i);return`<button class="chip ${A[tab]==i?'on':''} ${lk?'lk':''}" onclick="pick(${i})">${n}${lk?' 🔒'+CO[tab][i]:''}</button>`}).join('')}</div><p>Color:</p><div class="row">${pal.map(c=>`<button class="sw" style="background:${c}" onclick="A.${cf}='${c}';snd.cl();edit()"></button>`).join('')}</div></div></div><button class="big" onclick="keep()">💾 Guardar mi skin</button></div>`}
+function pick(i){const k=tab+i,c=CO[tab][i];if(c&&!U.own.includes(k)){if(U.c<c)return toast(`Necesitas 🪙 ${c}. ¡Juega para ganar monedas!`);U.c-=c;U.own.push(k);save();toast('¡Desbloqueado! 🎉');snd.win()}else snd.cl();A[tab]=i;edit()}
+function rnd(){for(const t in IT){const ok=IT[t].map((_,i)=>i).filter(i=>!CO[t][i]||U.own.includes(t+i));A[t]=pk(ok);A[CF[t]]=pk(t=='sp'?SK:PAL)}snd.cl();edit()}
+function keep(){U.av={...A};save();snd.win();toast('¡Skin guardada! 💖');home()}
+
+const s=ld('dm_s',null)||(()=>{try{return sessionStorage.getItem('dm_s')}catch(e){}})();
+s&&users()[s]?begin(s,true):auth();
+</script></body></html>
